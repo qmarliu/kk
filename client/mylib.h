@@ -4,6 +4,7 @@
 #include "../share/lib.h"
 #include "../share/protocol.h"
 #include <sys/socket.h>
+#include <unistd.h>
 
 extern char tips[150];
 extern unsigned int my_id;
@@ -15,7 +16,7 @@ extern struct winsize WINSIZE;
 extern struct sockaddr_in my_udp;
 
 extern struct friends_save frd[FRIENDS_MAX];
-extern cnt_frd;
+extern int cnt_frd;
 //我的昵称
 extern char nickname[NAME_LEN + 1];
 extern char my_gender[4];

@@ -4,14 +4,14 @@
 //功  能: 右下角显示时间和作者
 void draw_author_time()
 {
-	time_t rawtime;
-	struct tm *timeinfo;
-	time( &rawtime );
-	timeinfo = localtime( &rawtime );
-	printf("\e[%d;%dH\e[36m聊天系统 | 作者: 刘磊 | 时间: %d-%02d-%02d %02d:%02d\e[0m",
-			AUTHOR_ROW, AUTHOR_COL, 
-			1900+timeinfo->tm_year, 1+timeinfo->tm_mon,timeinfo->tm_mday,
-			timeinfo->tm_hour,timeinfo->tm_min); 
+    time_t rawtime;
+    struct tm *timeinfo;
+    time( &rawtime );
+    timeinfo = localtime( &rawtime );
+    printf("\e[%d;%dH\e[36m聊天系统 | 作者: 刘磊 | 时间: %d-%02d-%02d %02d:%02d\e[0m",
+            AUTHOR_ROW, AUTHOR_COL, 
+            1900+timeinfo->tm_year, 1+timeinfo->tm_mon,timeinfo->tm_mday,
+            timeinfo->tm_hour,timeinfo->tm_min); 
     fflush(NULL);
 }
 
@@ -28,13 +28,13 @@ void draw_welcome()
 void draw_devision()
 {
     int i;
-	printf("\e[%d;%dH\e[30m", AUTHOR_ROW-1, DIVISION_START_COL);   //作者上的分割线
-	for(i=0; i<DIVISION_LEN; ++i)
-		printf("-");
+    printf("\e[%d;%dH\e[30m", AUTHOR_ROW-1, DIVISION_START_COL);   //作者上的分割线
+    for(i=0; i<DIVISION_LEN; ++i)
+        printf("-");
 
-	printf("\e[%d;%dH\e[30m", WELCOME_ROW+1, DIVISION_START_COL);   //欢迎下的分割线
-	for(i=0; i<DIVISION_LEN; ++i)
-		printf("-");
+    printf("\e[%d;%dH\e[30m", WELCOME_ROW+1, DIVISION_START_COL);   //欢迎下的分割线
+    for(i=0; i<DIVISION_LEN; ++i)
+        printf("-");
 
     printf("\e[0m");
     fflush(NULL);
@@ -42,17 +42,17 @@ void draw_devision()
 
 void draw_picture()
 {
-	int row=-1;
-	printf("\e[%d;%dH", LOGIN_PIC_ROW + (++row), LOGIN_PIC_COL);
-	printf("TTTTTTTTTT");
-	printf("\e[%d;%dH", LOGIN_PIC_ROW + (++row), LOGIN_PIC_COL);
-	printf("|        |");
-	printf("\e[%d;%dH", LOGIN_PIC_ROW + (++row), LOGIN_PIC_COL);
-	printf("|        |");
-	printf("\e[%d;%dH", LOGIN_PIC_ROW + (++row), LOGIN_PIC_COL);
-	printf("|        |");
-	printf("\e[%d;%dH", LOGIN_PIC_ROW + (++row), LOGIN_PIC_COL);
-	printf("----------");
+    int row=-1;
+    printf("\e[%d;%dH", LOGIN_PIC_ROW + (++row), LOGIN_PIC_COL);
+    printf("TTTTTTTTTT");
+    printf("\e[%d;%dH", LOGIN_PIC_ROW + (++row), LOGIN_PIC_COL);
+    printf("|        |");
+    printf("\e[%d;%dH", LOGIN_PIC_ROW + (++row), LOGIN_PIC_COL);
+    printf("|        |");
+    printf("\e[%d;%dH", LOGIN_PIC_ROW + (++row), LOGIN_PIC_COL);
+    printf("|        |");
+    printf("\e[%d;%dH", LOGIN_PIC_ROW + (++row), LOGIN_PIC_COL);
+    printf("----------");
 }
 
 //功  能: 绘制登录窗口
@@ -67,7 +67,7 @@ void draw_login()
     for(i=0; i<LOGIN_HIG; ++i) {
         printf("\e[%d;%dH", LOGIN_ROW + i, LOGIN_COL);
         for(j=0; j<LOGIN_WID; ++j) {
-           printf(" ");
+            printf(" ");
         }
     }
 
@@ -77,19 +77,19 @@ void draw_login()
     printf("\e[30m"); //黑色字体显示如下信息
     printf("\e[%d;%dHKK 沟通你我", LOGIN_ROW, LOGIN_COL);
     printf("\e[%d;%dHKK2014", LOGIN_PSW_ROW+2, LOGIN_PSW_COL + 3);
-	draw_picture();
+    draw_picture();
 
     printf("\e[34m"); //蓝色字体显示如下信息
     printf("\e[%d;%dH注册帐号", LOGIN_REG_ROW,  LOGIN_REG_COL);
     printf("\e[%d;%dH注销帐号", LOGIN_OFF_ROW,  LOGIN_OFF_COL);
     printf("\e[%d;%dH\e[1m登        录", LOGIN_BTN_ROW ,  LOGIN_BTN_COL);
-	
+
 
     printf("\e[0m");//恢复终端颜色，用空格模拟帐号和密码框
     printf("\e[%d;%dH", LOGIN_ACCOUNT_ROW,  LOGIN_ACCOUNT_COL);
-	printf("                    ");
+    printf("                    ");
     printf("\e[%d;%dH", LOGIN_PSW_ROW, LOGIN_PSW_COL);
-	printf("                    ");
+    printf("                    ");
 
     printf("\e[30m");//在帐号框下显示输入条
 
@@ -113,7 +113,7 @@ void draw_register()
     for(i=0; i<REG_HIG; ++i) {
         printf("\e[%d;%dH", REG_ROW + i, REG_COL);
         for(j=0; j<REG_WID; ++j) {
-           printf(" ");
+            printf(" ");
         }
     }
 
@@ -165,7 +165,7 @@ void draw_main()
             printf(" ");
         }
     }
-    
+
     ++i;
     printf("\e[%d;%dH",MAIN_ROW + i, MAIN_COL);
     for(j=0; j<MAIN_WID; ++j)//联系人/群 下面一行背景 
@@ -177,7 +177,7 @@ void draw_main()
     for(i=0; i<MAIN_WID; ++i)
         printf("\e[%d;%dH ", MAIN_ROW + MAIN_HIG-3,MAIN_COL + i );
 
-    
+
     //绘制左右边框
     for(i=0; i<MAIN_HIG-MY_INFO_ROW -1; ++i) {
         printf("\e[%d;%dH \e[%d;%dH ", MAIN_ROW+MY_INFO_ROW+i, MAIN_COL, 
@@ -266,7 +266,7 @@ void cover_add_friend()
     fflush(NULL);
 }
 
-void set_tips(char *str)
+void set_tips(const char *str)
 {
     strcpy(tips, str);
 }
@@ -279,11 +279,11 @@ void tips_show()
     } else {
         printf("\e[%d;%dH\e[44;30m\e[K%s\e[0m", TIPS_ROW, TIPS_COL, tips);
     }
-    printf("\e[u"); //回复光标位置
+    printf("\e[u"); //恢复光标位置
     fflush(NULL);
 }
 
-void err_show(char *err)
+void err_show(const char *err)
 {
     printf("\e[s"); //保存光标位置
     if(strcmp(err , "") == 0) { //传进来的如果是空字符，则清除之前的提示信息

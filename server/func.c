@@ -9,9 +9,9 @@ int online_sub(unsigned int id)
 {
     int i;
     for(i=0; i<ONLINE_MAX; ++i) {
-       if (kk_addr[i].usrId == id) {
-           return i;
-       }
+        if (kk_addr[i].usrId == id) {
+            return i;
+        }
     }
     return -1;
 }
@@ -24,8 +24,8 @@ void register_user_func(char *reg_content, int sk)
             usr_reg->psw, usr_reg->gender, usr_reg->addr);
     FILE *fp = fopen("../data/usr.db", "r+");
     ERRP(fp == NULL , "fopen", 
-      printf("文件操作失败, 发送注册失败信息");return  send_msg(0, USR, err, 0, 0, NULL,sk);
-            );
+            printf("文件操作失败, 发送注册失败信息");return  send_msg(0, USR, err, 0, 0, NULL,sk);
+        );
 
     int cntKK=0,newKK=0;
     fread(&cntKK, 4, 1, fp);
@@ -52,10 +52,10 @@ void register_user_func(char *reg_content, int sk)
     sprintf(kk_id, "../data/%d", newKK);
     fp = fopen(kk_id, "w");
     ERRP(fp == NULL , "fopen", 
-      printf("文件创建失败，发送注册失败信息\n");return  send_msg(0, USR, err, 0, 0, NULL,sk);
-            );
+            printf("文件创建失败，发送注册失败信息\n");return  send_msg(0, USR, err, 0, 0, NULL,sk);
+        );
     fwrite(usr_reg, sizeof(struct register_usr_str), 1, fp);
-    
+
     //十个的好友信息
     struct friends_save f[FRIENDS_MAX];
     bzero(f, sizeof(f));
@@ -75,7 +75,7 @@ void register_user_func(char *reg_content, int sk)
 void login_func(struct sk_port_ip *usr_udp, char *reg_content, int sk, int usrNum)
 {
     struct login_str *usr_login = (struct login_str *)reg_content;
-   
+
     if(online_sub(usr_login->id) >=0 ) { //说明已经登录
         printf("已登录,用户重新登录");
         send_msg(0, USR, err, 0, 0, NULL,sk);
@@ -88,7 +88,7 @@ void login_func(struct sk_port_ip *usr_udp, char *reg_content, int sk, int usrNu
     FILE *fp = fopen(kk_id, "r");
     ERRP(fp == NULL , "fopen", 
             printf("没有这个帐号，登陆失败"); return  send_msg(0, USR, err, 0, 0, NULL,sk);
-            );
+        );
     struct register_usr_str read_usr;//register_usr_str里能有登录的信息
     fread(&read_usr, sizeof(read_usr), 1, fp);
     extern int cnt_usr;
@@ -134,8 +134,8 @@ void find_usr_func(int srcId, char *find_content,int sk)
     FILE *fp = fopen(kk_id, "r");
     enum err_type err_msg = usr_not_exit;
     ERRP(fp == NULL , "fopen", 
-             printf("查找的用户不存在\n"); return  send_msg(srcId, USR, err, 1, 4 , usr_not_exit,sk);
-            );
+            printf("查找的用户不存在\n"); return  send_msg(srcId, USR, err, 1, 4 , usr_not_exit,sk);
+        );
     struct register_usr_str usr_reg;
     fread(&usr_reg, sizeof(struct register_usr_str), 1, fp);
     strcpy(usr->name, usr_reg.name);
@@ -150,7 +150,6 @@ void find_usr_func(int srcId, char *find_content,int sk)
 }
 
 
-//功  能: 转发
 void add_usr_func(int dstId, char *find_content,int sk)
 {
     struct find_usr_str* usr = (struct find_usr_str *)find_content;
@@ -194,7 +193,7 @@ void  add_usr_yes_func(unsigned int src_id, struct find_usr_str *content, int sk
     sprintf(kk_id, "../data/%d", src_id);
     FILE *fp = fopen(kk_id, "r+");
     fread(&frd_info, sizeof(struct register_usr_str), 1, fp);
-    
+
     //十个的好友信息
     struct friends_save f[FRIENDS_MAX];
     fread(f, sizeof(struct friends_save), FRIENDS_MAX, fp);

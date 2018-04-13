@@ -2,6 +2,7 @@
 #include "../share/protocol.h"
 #include "msg.h"
 #include "func.h"
+#include "show.h"
 #include <pthread.h>
 #include <poll.h>
 
@@ -10,7 +11,11 @@ extern int server_fd;
 extern int my_ufd;
 void general_vertify_code(char *code)
 {
-    char serial_num[3][26] = {"12345678901234567890123456", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+    char serial_num[3][26] = { 
+        {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6'},
+        {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'},
+        {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'},
+        };
     code[0] = serial_num[rand()%3][rand()%26];
     code[1] = serial_num[rand()%3][rand()%26];
     code[2] = serial_num[rand()%3][rand()%26];
@@ -19,42 +24,42 @@ void general_vertify_code(char *code)
 
 int is_esc_ch()
 {
- 	if(ch[0] == 27 && ch[1] == 0 && ch[2] == 0) {
-		return 1;
-	}
-	return 0;
+    if(ch[0] == 27 && ch[1] == 0 && ch[2] == 0) {
+        return 1;
+    }
+    return 0;
 }
 
 int is_tab_ch()
 {
- 	if(ch[0] == 9 && ch[1] == 0 && ch[2] == 0) {
-		return 1;
-	}
-	return 0;
+    if(ch[0] == 9 && ch[1] == 0 && ch[2] == 0) {
+        return 1;
+    }
+    return 0;
 }
 
 int is_shift_tab_ch()
 {
-	if(ch[0] == 27 && ch[1] == 91 && ch[2] == 90) {
-		return 1;
-	}
-	return 0;
+    if(ch[0] == 27 && ch[1] == 91 && ch[2] == 90) {
+        return 1;
+    }
+    return 0;
 }
 
 int is_enter_ch()
 {
-	if(ch[0] == 13 && ch[1] == 0 && ch[2] == 0) {
+    if(ch[0] == 13 && ch[1] == 0 && ch[2] == 0) {
         return 1;
-	}
+    }
     return 0;
 }
 
 int is_back_ch()
 {
-	if(ch[0] == 127 && ch[1] == 0 && ch[2] == 0) {
-		return 1;
-	}
-	return 0;
+    if(ch[0] == 127 && ch[1] == 0 && ch[2] == 0) {
+        return 1;
+    }
+    return 0;
 }
 
 int is_num_ch()
@@ -105,19 +110,19 @@ int is_dirc_ch()
     return is_up_ch() || is_down_ch() || is_left_ch() || is_right_ch();
 }
 
-int set_main_curs_pos(enum LOGIN_CURS_POS curPos)
+void set_main_curs_pos(enum MAIN_CURS_POS curPos)
 {
     int col_friend = FRIEND_COL + 1;
     switch(curPos)
-	{
-	 	case MAIN_LINKMAN:
-	 		cur_x = LINKMAN_ROW;
-			cur_y = LINKMAN_COL;
-			break;
-		case MAIN_GROUP:
-			cur_x = GROUP_NAME_ROW;
-			cur_y = GROUP_NAME_COL;
-			break;
+    {
+        case MAIN_LINKMAN:
+            cur_x = LINKMAN_ROW;
+            cur_y = LINKMAN_COL;
+            break;
+        case MAIN_GROUP:
+            cur_x = GROUP_NAME_ROW;
+            cur_y = GROUP_NAME_COL;
+            break;
         case F1:
             cur_x = FRIEND_ROW;	
             cur_y = col_friend;
@@ -158,20 +163,20 @@ int set_main_curs_pos(enum LOGIN_CURS_POS curPos)
             cur_x = FRIEND_ROW + 9;	
             cur_y = col_friend;
             break;
-		case  MAIN_FIND:
-			cur_x = ADD_ROW;
-			cur_y = ADD_COL;
-			break;
+        case  MAIN_FIND:
+            cur_x = ADD_ROW;
+            cur_y = ADD_COL;
+            break;
         case MAIN_RETURN:
             cur_x = MAIN_RETURN_ROW;
             cur_y = MAIN_RETURN_COL;
             break;
-		default:
-			fprintf(stderr, "set_main_curs_pos error, 程序不应该跑到这里来\n");
-	 		break;
-	}
-	printf("\e[%d;%dH",cur_x, cur_y);
-	fflush(NULL);
+        default:
+            fprintf(stderr, "set_main_curs_pos error, 程序不应该跑到这里来\n");
+            break;
+    }
+    printf("\e[%d;%dH",cur_x, cur_y);
+    fflush(NULL);
 }
 
 void deal_find_usr(struct node *msg, enum MAIN_CURS_POS *curs)
@@ -275,7 +280,7 @@ void deal_server_msg(struct node *msg, enum MAIN_CURS_POS *curs_pos)
         }
         return ;
     } 
-    
+
     switch(msg->msg_type) 
     {
         case find_usr:
@@ -283,6 +288,8 @@ void deal_server_msg(struct node *msg, enum MAIN_CURS_POS *curs_pos)
             break;
         case add_usr_confirm:
             deal_add_usr_confirm(msg, curs_pos);
+            break;
+        default:
             break;
     }
 }
@@ -331,7 +338,7 @@ void main_func()
             printf("\e[42;34m已退出KK\n\e[0m");
             exit(0);
         } else if( is_tab_ch() ) {  //按下tab
-           if(curs_pos == MAIN_RETURN) {
+            if(curs_pos == MAIN_RETURN) {
                 curs_pos = MAIN_LINKMAN;
             } else {
                 ++curs_pos;
@@ -376,72 +383,72 @@ void main_func()
 int set_login_curs_pos(enum LOGIN_CURS_POS curPos, int cnt_accont, int cnt_psw)
 {
     switch(curPos)
-	{
-	 	case LOGIN_ID:
-	 		cur_x = LOGIN_ACCOUNT_ROW;
-			cur_y = LOGIN_ACCOUNT_COL + cnt_accont;
-			break;
-		case LOGIN_PSW:
-			cur_x = LOGIN_PSW_ROW;
-			cur_y = LOGIN_PSW_COL + cnt_psw;
-			break;
-		case LOGIN_LOGIN:
-			cur_x = LOGIN_BTN_ROW;	
-			cur_y = LOGIN_BTN_COL;
-			break;
-		case REG:
-			cur_x = LOGIN_REG_ROW;
-			cur_y = LOGIN_REG_COL;
-			break;
-		case LOGOFF:
-			cur_x = LOGIN_OFF_ROW;
-			cur_y = LOGIN_OFF_COL;
-			break;
+    {
+        case LOGIN_ID:
+            cur_x = LOGIN_ACCOUNT_ROW;
+            cur_y = LOGIN_ACCOUNT_COL + cnt_accont;
+            break;
+        case LOGIN_PSW:
+            cur_x = LOGIN_PSW_ROW;
+            cur_y = LOGIN_PSW_COL + cnt_psw;
+            break;
+        case LOGIN_LOGIN:
+            cur_x = LOGIN_BTN_ROW;	
+            cur_y = LOGIN_BTN_COL;
+            break;
+        case REG:
+            cur_x = LOGIN_REG_ROW;
+            cur_y = LOGIN_REG_COL;
+            break;
+        case LOGOFF:
+            cur_x = LOGIN_OFF_ROW;
+            cur_y = LOGIN_OFF_COL;
+            break;
         case LOGIN_RETURN:
             cur_x = LOGIN_RETURN_ROW;
             cur_y = LOGIN_RETURN_COL;
             break;
-		default:
-			fprintf(stderr, "set_login_curs_pos error, 程序不应该跑到这里来\n");
-	 		break;
-	}
-	printf("\e[%d;%dH",cur_x, cur_y);
-	fflush(NULL);
+        default:
+            fprintf(stderr, "set_login_curs_pos error, 程序不应该跑到这里来\n");
+            break;
+    }
+    printf("\e[%d;%dH",cur_x, cur_y);
+    fflush(NULL);
 }
 
 //功  能:登录界面中移动光标和输入选择
 void login_func()
 {
-	enum LOGIN_CURS_POS curs_pos = LOGIN_ID;
+    enum LOGIN_CURS_POS curs_pos = LOGIN_ID;
     char usr_accont[ID_LEN+1] = {0}; //存储帐号输入
     int cnt_accont = 0; //记录账户输入多少个
 
     char psw[PSW_LEN+1] = {0}; //存储密码输入
     int cnt_psw = 0;  //记录密码输入多少个
 
-	while(1) {
-		get_str(); //用户输入字符
+    while(1) {
+        get_str(); //用户输入字符
         err_show("");
-		//输入字符的动作
-		if(is_esc_ch()) { //退出整个程序
+        //输入字符的动作
+        if(is_esc_ch()) { //退出整个程序
             system("clear");
             printf("\e[42;34m已退出KK\n\e[0m");
             exit(0);
         } else if( is_tab_ch() ) {  //按下tab
-			if(curs_pos == LOGIN_RETURN) {
-				curs_pos = LOGIN_ID;
-			} else {
-				++curs_pos;
-			}
-			set_login_curs_pos(curs_pos, cnt_accont, cnt_psw);
-		} else if( is_shift_tab_ch() ) {//按下shift_tab
-			if( curs_pos == LOGIN_ID ) {
-				curs_pos = LOGIN_RETURN;
-			} else {
-				--curs_pos;
-			}
-			set_login_curs_pos(curs_pos, cnt_accont, cnt_psw);
-		} else if( is_enter_ch() ) { //回车
+            if(curs_pos == LOGIN_RETURN) {
+                curs_pos = LOGIN_ID;
+            } else {
+                ++curs_pos;
+            }
+            set_login_curs_pos(curs_pos, cnt_accont, cnt_psw);
+        } else if( is_shift_tab_ch() ) {//按下shift_tab
+            if( curs_pos == LOGIN_ID ) {
+                curs_pos = LOGIN_RETURN;
+            } else {
+                --curs_pos;
+            }
+            set_login_curs_pos(curs_pos, cnt_accont, cnt_psw);
+        } else if( is_enter_ch() ) { //回车
             if(curs_pos == REG) { //选择了注册界面
                 disWin = REG_WIN;
                 return ;
@@ -492,7 +499,7 @@ void login_func()
             memcpy(frd ,msg.content, FRIENDS_MAX * sizeof(struct friends_save));
             disWin = MAIN_WIN;
             return ;
-		} else if( is_back_ch()) {
+        } else if( is_back_ch()) {
             if(curs_pos == LOGIN_ID) {
                 if(cnt_accont == 0)
                     continue;
@@ -530,60 +537,60 @@ void login_func()
             }
             fflush(NULL);
         }
-	}
+    }
 }
 
 int set_reg_curs_pos(enum REGISTER_CURS_POS curPos, int cnt_usr_name, int cnt_psw,int cnt_cf_psw,int cnt_gender,
         int cnt_addr,int cnt_code , int cnt_usr_name_cn ,  int cnt_addr_cn)
 {
-	switch(curPos)
-	{
-		case REG_NAME:
-			cur_x = REG_NAME_ROW;
-			cur_y = REG_NAME_COL + 9 + cnt_usr_name - cnt_usr_name_cn; //输入一个中文的时候占据3个字符，而显示只占两个，所以要减去cnt_usr_name_cn
-			break;
-		case REG_PSW:
-			cur_x = REG_PSW_ROW;
-			cur_y = REG_PSW_COL + 9 + cnt_psw;
-			break;
-		case REG_CF_PSW:
-			cur_x = REG_CF_PSW_ROW;	
-			cur_y = REG_CF_PSW_COL + 9 + cnt_cf_psw;
-			break;
-		case REG_GENDER:
-			cur_x = REG_GENDER_ROW;
-			cur_y = REG_GENDER_COL + 9 + cnt_gender;
-			break;
-		case REG_ADDR:
-			cur_x = REG_ADDR_ROW;
-			cur_y = REG_ADDR_COL + 9 + cnt_addr - cnt_addr_cn;
-			break;
-		case REG_VER_CODE:
-			cur_x = REG_VERTIFY_ROW;
-			cur_y = REG_VERTIFY_COL + 9 + cnt_code;
-			break;
-		case REG_REG:
+    switch(curPos)
+    {
+        case REG_NAME:
+            cur_x = REG_NAME_ROW;
+            cur_y = REG_NAME_COL + 9 + cnt_usr_name - cnt_usr_name_cn; //输入一个中文的时候占据3个字符，而显示只占两个，所以要减去cnt_usr_name_cn
+            break;
+        case REG_PSW:
+            cur_x = REG_PSW_ROW;
+            cur_y = REG_PSW_COL + 9 + cnt_psw;
+            break;
+        case REG_CF_PSW:
+            cur_x = REG_CF_PSW_ROW;	
+            cur_y = REG_CF_PSW_COL + 9 + cnt_cf_psw;
+            break;
+        case REG_GENDER:
+            cur_x = REG_GENDER_ROW;
+            cur_y = REG_GENDER_COL + 9 + cnt_gender;
+            break;
+        case REG_ADDR:
+            cur_x = REG_ADDR_ROW;
+            cur_y = REG_ADDR_COL + 9 + cnt_addr - cnt_addr_cn;
+            break;
+        case REG_VER_CODE:
+            cur_x = REG_VERTIFY_ROW;
+            cur_y = REG_VERTIFY_COL + 9 + cnt_code;
+            break;
+        case REG_REG:
             cur_x = REG_NOW_ROW;
             cur_y = REG_NOW_COL;
             break;
-		case REG_RETURN:
+        case REG_RETURN:
             cur_x = REG_RETURN_ROW;
             cur_y = REG_RETURN_COL;
             break;
-		default:
-			fprintf(stderr, "set_reg_curs_pos error, 程序不应该跑到这里来\n");
-			break;
-	}
-	printf("\e[%d;%dH",cur_x, cur_y);
-	fflush(NULL);
+        default:
+            fprintf(stderr, "set_reg_curs_pos error, 程序不应该跑到这里来\n");
+            break;
+    }
+    printf("\e[%d;%dH",cur_x, cur_y);
+    fflush(NULL);
 }
 
 //功  能:注册界面中移动光标和输入选择
 void register_func()
 {
-	enum REGISTER_CURS_POS curs_pos = REG_NAME;
+    enum REGISTER_CURS_POS curs_pos = REG_NAME;
     struct register_usr_str reg_msg; 
-    
+
     bzero(&reg_msg, sizeof(reg_msg));
 
     char cf_psw[PSW_LEN+1]    = {0}; //存储确认密码输入
@@ -606,8 +613,8 @@ void register_func()
     printf("\e[%d;%dH", REG_NAME_ROW,  REG_NAME_COL + 9);  
     fflush(NULL);
 
-	while(1) {
-		get_str(); //用户输入字符
+    while(1) {
+        get_str(); //用户输入字符
         err_show(""); //清除提示信息
 
         //判定输入的字符 
@@ -616,22 +623,22 @@ void register_func()
             printf("\e[42;34m已退出KK\n\e[0m");
             exit(0);
         } if( is_tab_ch() ) {  //按下tab
-			if(curs_pos == REG_RETURN) {
-				curs_pos = REG_NAME;
-			} else {
-				++curs_pos;
-			}
-			set_reg_curs_pos(curs_pos, cnt_usr_name, cnt_psw, cnt_cf_psw,cnt_gender, cnt_addr, cnt_code,
+            if(curs_pos == REG_RETURN) {
+                curs_pos = REG_NAME;
+            } else {
+                ++curs_pos;
+            }
+            set_reg_curs_pos(curs_pos, cnt_usr_name, cnt_psw, cnt_cf_psw,cnt_gender, cnt_addr, cnt_code,
                     cnt_usr_name_cn,  cnt_addr_cn);
-		} else if( is_shift_tab_ch() ) {//按下shift_tab
-			if( curs_pos == REG_NAME ) {
-				curs_pos = REG_RETURN;
-			} else {
-				--curs_pos;
-			}
-			set_reg_curs_pos(curs_pos, cnt_usr_name, cnt_psw, cnt_cf_psw,cnt_gender, cnt_addr, cnt_code,
+        } else if( is_shift_tab_ch() ) {//按下shift_tab
+            if( curs_pos == REG_NAME ) {
+                curs_pos = REG_RETURN;
+            } else {
+                --curs_pos;
+            }
+            set_reg_curs_pos(curs_pos, cnt_usr_name, cnt_psw, cnt_cf_psw,cnt_gender, cnt_addr, cnt_code,
                     cnt_usr_name_cn, cnt_addr_cn);
-		} else if( is_enter_ch() ) { //回车
+        } else if( is_enter_ch() ) { //回车
             if(curs_pos == REG_RETURN) {
                 disWin = LOGIN_WIN;
                 return;
@@ -640,7 +647,7 @@ void register_func()
             if(cnt_usr_name == 0) {
                 err_show("请输入用户名");
                 cur_x = REG_NAME_ROW;
-			    cur_y = REG_NAME_COL + 9 + cnt_usr_name - cnt_usr_name_cn; 
+                cur_y = REG_NAME_COL + 9 + cnt_usr_name - cnt_usr_name_cn; 
                 curs_pos = REG_NAME;
                 isfalse = 1;
             } else if(cnt_psw == 0 && cnt_cf_psw == 0) {
@@ -670,7 +677,7 @@ void register_func()
             } else if(strcmp(vertify_code, code) != 0) {
                 err_show("验证码有误");
                 cur_x = REG_VERTIFY_ROW;
-			    cur_y = REG_VERTIFY_COL + 9 + cnt_code;
+                cur_y = REG_VERTIFY_COL + 9 + cnt_code;
                 curs_pos = REG_VER_CODE;
                 isfalse = 1;
             }
@@ -694,7 +701,7 @@ void register_func()
             }
             disWin = LOGIN_WIN;
             return;
-		} else if( is_back_ch()) {
+        } else if( is_back_ch()) {
             if( curs_pos == REG_NAME) {
                 if(cnt_usr_name == 0 )
                     continue;
@@ -812,12 +819,12 @@ int add_friend_func()
     int cnt_accont = 0; //记录账户输入多少个
     printf("\e[43m");
     while(1) {
-		get_str(); //用户输入字符
+        get_str(); //用户输入字符
         err_show(""); //清除提示信息
 
         if(is_esc_ch()) {
             return 0;
-		} else if( is_enter_ch() ) { //回车
+        } else if( is_enter_ch() ) { //回车
             //发送查找好友信息给服务器
 
             struct find_usr_str frd_msg; 
@@ -840,7 +847,7 @@ int add_friend_func()
             }
             putchar(ch[0]);
             usr_accont[cnt_accont++] = ch[0];
-             fflush(NULL);
+            fflush(NULL);
         } else if(is_alpha_ch()) {//字符
             err_show("字母不能输入");
             fflush(NULL);
@@ -851,7 +858,7 @@ int add_friend_func()
             usr_accont[--cnt_accont] = '\0';
             printf("\e[1D\e[43m \e[1D"); //覆盖一个空格
             fflush(NULL);
-         }
+        }
     } 
     return 0;
 }

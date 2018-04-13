@@ -4,176 +4,214 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-ADD_COL	mylib.h	91;"	d
-ADD_FRIEND_BTN_COL	mylib.h	116;"	d
-ADD_FRIEND_BTN_ROW	mylib.h	115;"	d
-ADD_FRIEND_COL	mylib.h	108;"	d
-ADD_FRIEND_HIG	mylib.h	104;"	d
-ADD_FRIEND_ID_COL	mylib.h	112;"	d
-ADD_FRIEND_ID_ROW	mylib.h	111;"	d
-ADD_FRIEND_ROW	mylib.h	107;"	d
-ADD_FRIEND_WID	mylib.h	103;"	d
+ADD_COL	mylib.h	92;"	d
+ADD_FRIEND_BTN_COL	mylib.h	117;"	d
+ADD_FRIEND_BTN_ROW	mylib.h	116;"	d
+ADD_FRIEND_COL	mylib.h	109;"	d
+ADD_FRIEND_HIG	mylib.h	105;"	d
+ADD_FRIEND_ID_COL	mylib.h	113;"	d
+ADD_FRIEND_ID_ROW	mylib.h	112;"	d
+ADD_FRIEND_ROW	mylib.h	108;"	d
+ADD_FRIEND_WID	mylib.h	104;"	d
 ADD_FRIEND_WIN	mylib.h	/^    ADD_FRIEND_WIN, \/\/添加好友界面$/;"	e	enum:WINDOWS
-ADD_ROW	mylib.h	90;"	d
-AUTHOR_COL	mylib.h	44;"	d
-AUTHOR_ROW	mylib.h	43;"	d
-CANCLE_FRIEND_BTN_COL	mylib.h	120;"	d
-CANCLE_FRIEND_BTN_ROW	mylib.h	119;"	d
-DIVISION_LEN	mylib.h	60;"	d
-DIVISION_START_COL	mylib.h	59;"	d
-ERR_COL	mylib.h	52;"	d
-ERR_ROW	mylib.h	51;"	d
-F0	func.h	/^    F1, F2, F3,F4, F5, F6,F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
-F1	func.h	/^    F1, F2, F3,F4, F5, F6,F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
-F2	func.h	/^    F1, F2, F3,F4, F5, F6,F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
-F3	func.h	/^    F1, F2, F3,F4, F5, F6,F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
-F4	func.h	/^    F1, F2, F3,F4, F5, F6,F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
-F5	func.h	/^    F1, F2, F3,F4, F5, F6,F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
-F6	func.h	/^    F1, F2, F3,F4, F5, F6,F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
-F7	func.h	/^    F1, F2, F3,F4, F5, F6,F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
-F8	func.h	/^    F1, F2, F3,F4, F5, F6,F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
-F9	func.h	/^    F1, F2, F3,F4, F5, F6,F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
-FRIEND_COL	mylib.h	99;"	d
-FRIEND_ROW	mylib.h	98;"	d
-GROUP_NAME_COL	mylib.h	95;"	d
-GROUP_NAME_ROW	mylib.h	94;"	d
-LINKMAN_COL	mylib.h	87;"	d
-LINKMAN_ROW	mylib.h	86;"	d
-LOGIN_ACCOUNT_COL	mylib.h	142;"	d
-LOGIN_ACCOUNT_ROW	mylib.h	141;"	d
-LOGIN_BTN_COL	mylib.h	158;"	d
-LOGIN_BTN_ROW	mylib.h	157;"	d
-LOGIN_COL	mylib.h	130;"	d
+ADD_ROW	mylib.h	91;"	d
+AUTHOR_COL	mylib.h	45;"	d
+AUTHOR_ROW	mylib.h	44;"	d
+CANCLE_FRIEND_BTN_COL	mylib.h	121;"	d
+CANCLE_FRIEND_BTN_ROW	mylib.h	120;"	d
+DIVISION_LEN	mylib.h	61;"	d
+DIVISION_START_COL	mylib.h	60;"	d
+ERR_COL	mylib.h	53;"	d
+ERR_ROW	mylib.h	52;"	d
+F0	func.h	/^    F1, F2, F3, F4, F5, F6, F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
+F1	func.h	/^    F1, F2, F3, F4, F5, F6, F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
+F2	func.h	/^    F1, F2, F3, F4, F5, F6, F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
+F3	func.h	/^    F1, F2, F3, F4, F5, F6, F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
+F4	func.h	/^    F1, F2, F3, F4, F5, F6, F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
+F5	func.h	/^    F1, F2, F3, F4, F5, F6, F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
+F6	func.h	/^    F1, F2, F3, F4, F5, F6, F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
+F7	func.h	/^    F1, F2, F3, F4, F5, F6, F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
+F8	func.h	/^    F1, F2, F3, F4, F5, F6, F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
+F9	func.h	/^    F1, F2, F3, F4, F5, F6, F7, F8, F9, F0,\/\/光标在十个分组位置$/;"	e	enum:MAIN_CURS_POS
+FRIEND_COL	mylib.h	100;"	d
+FRIEND_ROW	mylib.h	99;"	d
+GROUP_NAME_COL	mylib.h	96;"	d
+GROUP_NAME_ROW	mylib.h	95;"	d
+LINKMAN_COL	mylib.h	88;"	d
+LINKMAN_ROW	mylib.h	87;"	d
+LOGIN_ACCOUNT_COL	mylib.h	143;"	d
+LOGIN_ACCOUNT_ROW	mylib.h	142;"	d
+LOGIN_BTN_COL	mylib.h	159;"	d
+LOGIN_BTN_ROW	mylib.h	158;"	d
+LOGIN_COL	mylib.h	131;"	d
 LOGIN_CURS_POS	func.h	/^enum LOGIN_CURS_POS { $/;"	g
-LOGIN_HIG	mylib.h	126;"	d
+LOGIN_HIG	mylib.h	127;"	d
 LOGIN_ID	func.h	/^    LOGIN_ID,   \/\/光标在输入登入帐号位置$/;"	e	enum:LOGIN_CURS_POS
 LOGIN_LOGIN	func.h	/^    LOGIN_LOGIN, \/\/登录按钮位置$/;"	e	enum:LOGIN_CURS_POS
-LOGIN_OFF_COL	mylib.h	154;"	d
-LOGIN_OFF_ROW	mylib.h	153;"	d
-LOGIN_PIC_COL	mylib.h	134;"	d
-LOGIN_PIC_ROW	mylib.h	133;"	d
+LOGIN_OFF_COL	mylib.h	155;"	d
+LOGIN_OFF_ROW	mylib.h	154;"	d
+LOGIN_PIC_COL	mylib.h	135;"	d
+LOGIN_PIC_ROW	mylib.h	134;"	d
 LOGIN_PSW	func.h	/^    LOGIN_PSW,  \/\/密码位置$/;"	e	enum:LOGIN_CURS_POS
-LOGIN_PSW_COL	mylib.h	146;"	d
-LOGIN_PSW_ROW	mylib.h	145;"	d
-LOGIN_REG_COL	mylib.h	150;"	d
-LOGIN_REG_ROW	mylib.h	149;"	d
+LOGIN_PSW_COL	mylib.h	147;"	d
+LOGIN_PSW_ROW	mylib.h	146;"	d
+LOGIN_REG_COL	mylib.h	151;"	d
+LOGIN_REG_ROW	mylib.h	150;"	d
 LOGIN_RETURN	func.h	/^    LOGIN_RETURN, \/\/返回$/;"	e	enum:LOGIN_CURS_POS
-LOGIN_RETURN_COL	mylib.h	138;"	d
-LOGIN_RETURN_ROW	mylib.h	137;"	d
-LOGIN_ROW	mylib.h	129;"	d
-LOGIN_WID	mylib.h	125;"	d
+LOGIN_RETURN_COL	mylib.h	139;"	d
+LOGIN_RETURN_ROW	mylib.h	138;"	d
+LOGIN_ROW	mylib.h	130;"	d
+LOGIN_WID	mylib.h	126;"	d
 LOGIN_WIN	mylib.h	/^    LOGIN_WIN,  \/\/登陆界面$/;"	e	enum:WINDOWS
 LOGOFF	func.h	/^    LOGOFF,     \/\/注销位置$/;"	e	enum:LOGIN_CURS_POS
 LOGOFF_WIN	mylib.h	/^    LOGOFF_WIN, \/\/注销界面$/;"	e	enum:WINDOWS
-MAIN_COL	mylib.h	72;"	d
+MAIN_COL	mylib.h	73;"	d
 MAIN_CURS_POS	func.h	/^enum MAIN_CURS_POS {$/;"	g
 MAIN_FIND	func.h	/^    MAIN_FIND, \/\/光标在查找位置$/;"	e	enum:MAIN_CURS_POS
 MAIN_GROUP	func.h	/^    MAIN_GROUP,     \/\/光标在群位置$/;"	e	enum:MAIN_CURS_POS
-MAIN_HIG	mylib.h	65;"	d
+MAIN_HIG	mylib.h	66;"	d
 MAIN_LINKMAN	func.h	/^    MAIN_LINKMAN,  \/\/光标在联系人位置$/;"	e	enum:MAIN_CURS_POS
 MAIN_RETURN	func.h	/^    MAIN_RETURN,$/;"	e	enum:MAIN_CURS_POS
-MAIN_RETURN_COL	mylib.h	76;"	d
-MAIN_RETURN_ROW	mylib.h	75;"	d
-MAIN_ROW	mylib.h	71;"	d
-MAIN_WID	mylib.h	64;"	d
+MAIN_RETURN_COL	mylib.h	77;"	d
+MAIN_RETURN_ROW	mylib.h	76;"	d
+MAIN_ROW	mylib.h	72;"	d
+MAIN_WID	mylib.h	65;"	d
 MAIN_WIN	mylib.h	/^    MAIN_WIN,$/;"	e	enum:WINDOWS
-MY_INFO_ROW	mylib.h	79;"	d
-NICKNAME_COL	mylib.h	83;"	d
-NICKNAME_ROW	mylib.h	82;"	d
+MY_INFO_ROW	mylib.h	80;"	d
+NICKNAME_COL	mylib.h	84;"	d
+NICKNAME_ROW	mylib.h	83;"	d
 REG	func.h	/^    REG,        \/\/注册位置$/;"	e	enum:LOGIN_CURS_POS
 REGISTER_CURS_POS	func.h	/^enum REGISTER_CURS_POS {$/;"	g
 REG_ADDR	func.h	/^    REG_ADDR,   \/\/地址输入位置$/;"	e	enum:REGISTER_CURS_POS
-REG_ADDR_COL	mylib.h	191;"	d
-REG_ADDR_ROW	mylib.h	190;"	d
+REG_ADDR_COL	mylib.h	192;"	d
+REG_ADDR_ROW	mylib.h	191;"	d
 REG_CF_PSW	func.h	/^    REG_CF_PSW, \/\/密码确认位置$/;"	e	enum:REGISTER_CURS_POS
-REG_CF_PSW_COL	mylib.h	183;"	d
-REG_CF_PSW_ROW	mylib.h	182;"	d
-REG_COL	mylib.h	167;"	d
+REG_CF_PSW_COL	mylib.h	184;"	d
+REG_CF_PSW_ROW	mylib.h	183;"	d
+REG_COL	mylib.h	168;"	d
 REG_GENDER	func.h	/^    REG_GENDER, \/\/性别位置$/;"	e	enum:REGISTER_CURS_POS
-REG_GENDER_COL	mylib.h	187;"	d
-REG_GENDER_ROW	mylib.h	186;"	d
-REG_HIG	mylib.h	163;"	d
+REG_GENDER_COL	mylib.h	188;"	d
+REG_GENDER_ROW	mylib.h	187;"	d
+REG_HIG	mylib.h	164;"	d
 REG_NAME	func.h	/^    REG_NAME,  \/\/光标在输入昵称位置$/;"	e	enum:REGISTER_CURS_POS
-REG_NAME_COL	mylib.h	175;"	d
-REG_NAME_ROW	mylib.h	174;"	d
-REG_NOW_COL	mylib.h	199;"	d
-REG_NOW_ROW	mylib.h	198;"	d
+REG_NAME_COL	mylib.h	176;"	d
+REG_NAME_ROW	mylib.h	175;"	d
+REG_NOW_COL	mylib.h	200;"	d
+REG_NOW_ROW	mylib.h	199;"	d
 REG_PSW	func.h	/^    REG_PSW,    \/\/密码位置$/;"	e	enum:REGISTER_CURS_POS
-REG_PSW_COL	mylib.h	179;"	d
-REG_PSW_ROW	mylib.h	178;"	d
+REG_PSW_COL	mylib.h	180;"	d
+REG_PSW_ROW	mylib.h	179;"	d
 REG_REG	func.h	/^    REG_REG,   \/\/确认注册$/;"	e	enum:REGISTER_CURS_POS
 REG_RETURN	func.h	/^    REG_RETURN, \/\/返回$/;"	e	enum:REGISTER_CURS_POS
-REG_RETURN_COL	mylib.h	171;"	d
-REG_RETURN_ROW	mylib.h	170;"	d
-REG_ROW	mylib.h	166;"	d
-REG_VERTIFY_COL	mylib.h	195;"	d
-REG_VERTIFY_ROW	mylib.h	194;"	d
+REG_RETURN_COL	mylib.h	172;"	d
+REG_RETURN_ROW	mylib.h	171;"	d
+REG_ROW	mylib.h	167;"	d
+REG_VERTIFY_COL	mylib.h	196;"	d
+REG_VERTIFY_ROW	mylib.h	195;"	d
 REG_VER_CODE	func.h	/^    REG_VER_CODE , \/\/验证码$/;"	e	enum:REGISTER_CURS_POS
-REG_WID	mylib.h	162;"	d
+REG_WID	mylib.h	163;"	d
 REG_WIN	mylib.h	/^    REG_WIN,    \/\/注册界面$/;"	e	enum:WINDOWS
-TIPS_COL	mylib.h	56;"	d
-TIPS_ROW	mylib.h	55;"	d
-WELCOME_COL	mylib.h	48;"	d
-WELCOME_ROW	mylib.h	47;"	d
+TIPS_COL	mylib.h	57;"	d
+TIPS_ROW	mylib.h	56;"	d
+WELCOME_COL	mylib.h	49;"	d
+WELCOME_ROW	mylib.h	48;"	d
 WINDOWS	mylib.h	/^enum WINDOWS {$/;"	g
 WINSIZE	client.c	/^struct winsize WINSIZE;$/;"	v	typeref:struct:winsize
-WIN_OFFSET	mylib.h	68;"	d
+WIN_OFFSET	mylib.h	69;"	d
 _FUNC_H_	func.h	2;"	d
 _MSG_H_	msg.h	2;"	d
 _MYLIB_H	mylib.h	2;"	d
 _SHOW_H	show.h	2;"	d
 add_friend_func	func.c	/^int add_friend_func()$/;"	f
+add_friend_func	func.h	/^int add_friend_func();$/;"	p	signature:()
 ch	client.c	/^char ch[4];   \/\/接收输入的字符$/;"	v
 cnt_frd	client.c	/^int cnt_frd;$/;"	v
 cover_add_friend	show.c	/^void cover_add_friend()$/;"	f
+cover_add_friend	show.h	/^void cover_add_friend();$/;"	p	signature:()
 cur_x	client.c	/^int cur_x; $/;"	v
 cur_y	client.c	/^int cur_y; $/;"	v
-deal_add_usr_confirm	func.c	/^void deal_add_usr_confirm(struct node *msg, enum MAIN_CURS_POS *curs_pos)$/;"	f
-deal_find_usr	func.c	/^void deal_find_usr(struct node *msg, enum MAIN_CURS_POS *curs)$/;"	f
-deal_server_msg	func.c	/^void deal_server_msg(struct node *msg, enum MAIN_CURS_POS *curs_pos)$/;"	f
+deal_add_usr_confirm	func.c	/^void deal_add_usr_confirm(struct node *msg, enum MAIN_CURS_POS *curs_pos)$/;"	f	signature:(struct node *msg, enum MAIN_CURS_POS *curs_pos)
+deal_add_usr_confirm	func.h	/^void deal_add_usr_confirm(struct node *msg, enum MAIN_CURS_POS *curs_pos);$/;"	p	signature:(struct node *msg, enum MAIN_CURS_POS *curs_pos)
+deal_find_usr	func.c	/^void deal_find_usr(struct node *msg, enum MAIN_CURS_POS *curs)$/;"	f	signature:(struct node *msg, enum MAIN_CURS_POS *curs)
+deal_find_usr	func.h	/^void deal_find_usr(struct node *msg, enum MAIN_CURS_POS *curs);$/;"	p	signature:(struct node *msg, enum MAIN_CURS_POS *curs)
+deal_server_msg	func.c	/^void deal_server_msg(struct node *msg, enum MAIN_CURS_POS *curs_pos)$/;"	f	signature:(struct node *msg, enum MAIN_CURS_POS *curs_pos)
+deal_server_msg	func.h	/^void deal_server_msg(struct node *msg, enum MAIN_CURS_POS *curs_pos);$/;"	p	signature:(struct node *msg, enum MAIN_CURS_POS *curs_pos)
 disWin	mylib.h	/^}disWin;$/;"	v	typeref:enum:WINDOWS
 draw_add_friend	show.c	/^void draw_add_friend()$/;"	f
+draw_add_friend	show.h	/^void draw_add_friend();$/;"	p	signature:()
 draw_author_time	show.c	/^void draw_author_time()$/;"	f
+draw_author_time	show.h	/^void draw_author_time();$/;"	p	signature:()
 draw_devision	show.c	/^void draw_devision()$/;"	f
+draw_devision	show.h	/^void draw_devision();$/;"	p	signature:()
 draw_login	show.c	/^void draw_login()$/;"	f
+draw_login	show.h	/^void draw_login();$/;"	p	signature:()
 draw_main	show.c	/^void draw_main() $/;"	f
+draw_main	show.h	/^void draw_main();$/;"	p	signature:()
 draw_picture	show.c	/^void draw_picture()$/;"	f
 draw_register	show.c	/^void draw_register() $/;"	f
+draw_register	show.h	/^void draw_register();$/;"	p	signature:()
 draw_welcome	show.c	/^void draw_welcome()$/;"	f
-err_show	show.c	/^void err_show(char *err)$/;"	f
+draw_welcome	show.h	/^void draw_welcome();$/;"	p	signature:()
+err_show	show.c	/^void err_show(char *err)$/;"	f	signature:(char *err)
+err_show	show.h	/^void err_show(char *);$/;"	p	signature:(char *)
 frd	client.c	/^struct friends_save frd[FRIENDS_MAX];$/;"	v	typeref:struct:friends_save
-general_vertify_code	func.c	/^void general_vertify_code(char *code)$/;"	f
+general_vertify_code	func.c	/^void general_vertify_code(char *code)$/;"	f	signature:(char *code)
+general_vertify_code	func.h	/^void general_vertify_code(char *code);$/;"	p	signature:(char *code)
 get_str	mylib.c	/^void get_str()$/;"	f
+get_str	mylib.h	/^void get_str();$/;"	p	signature:()
 init_data	client.c	/^void init_data()$/;"	f
+init_data	client.c	/^void init_data();$/;"	p	file:
 is_alpha_ch	func.c	/^int is_alpha_ch()$/;"	f
+is_alpha_ch	func.h	/^int is_alpha_ch();$/;"	p	signature:()
 is_back_ch	func.c	/^int is_back_ch()$/;"	f
+is_back_ch	func.h	/^int is_back_ch();$/;"	p	signature:()
 is_dirc_ch	func.c	/^int is_dirc_ch()$/;"	f
+is_dirc_ch	func.h	/^int is_dirc_ch();$/;"	p	signature:()
 is_down_ch	func.c	/^int is_down_ch()$/;"	f
+is_down_ch	func.h	/^int is_down_ch();$/;"	p	signature:()
 is_enter_ch	func.c	/^int is_enter_ch()$/;"	f
+is_enter_ch	func.h	/^int is_enter_ch();$/;"	p	signature:()
 is_esc_ch	func.c	/^int is_esc_ch()$/;"	f
+is_esc_ch	func.h	/^int is_esc_ch();$/;"	p	signature:()
 is_left_ch	func.c	/^int is_left_ch()$/;"	f
+is_left_ch	func.h	/^int is_left_ch();$/;"	p	signature:()
 is_num_ch	func.c	/^int is_num_ch()$/;"	f
+is_num_ch	func.h	/^int is_num_ch();$/;"	p	signature:()
 is_right_ch	func.c	/^int is_right_ch()$/;"	f
+is_right_ch	func.h	/^int is_right_ch();$/;"	p	signature:()
 is_shift_tab_ch	func.c	/^int is_shift_tab_ch()$/;"	f
+is_shift_tab_ch	func.h	/^int is_shift_tab_ch();$/;"	p	signature:()
 is_tab_ch	func.c	/^int is_tab_ch()$/;"	f
+is_tab_ch	func.h	/^int is_tab_ch();$/;"	p	signature:()
 is_up_ch	func.c	/^int is_up_ch()$/;"	f
+is_up_ch	func.h	/^int is_up_ch();$/;"	p	signature:()
 login_func	func.c	/^void login_func()$/;"	f
-main	client.c	/^int main(int argc, char *argv[])$/;"	f
+login_func	func.h	/^void login_func();$/;"	p	signature:()
+main	client.c	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
 main_func	func.c	/^void main_func()$/;"	f
+main_func	func.h	/^void main_func();$/;"	p	signature:()
 my_addr	client.c	/^char my_addr[ADDR_LEN+1];\/\/地址$/;"	v
 my_gender	client.c	/^char my_gender[4];\/\/性别$/;"	v
 my_id	client.c	/^unsigned int my_id = 0;$/;"	v
 my_udp	client.c	/^struct sockaddr_in my_udp;$/;"	v	typeref:struct:sockaddr_in
 my_ufd	client.c	/^int my_ufd =0;$/;"	v
 nickname	client.c	/^char nickname[NAME_LEN + 1];\/\/昵称$/;"	v
-recv_msg	msg.c	/^int recv_msg(struct node *msg,int sk)$/;"	f
+recv_msg	msg.c	/^int recv_msg(struct node *msg,int sk)$/;"	f	signature:(struct node *msg,int sk)
+recv_msg	msg.h	/^int recv_msg(struct node *msg,int sk);$/;"	p	signature:(struct node *msg,int sk)
 register_func	func.c	/^void register_func()$/;"	f
-send_msg	msg.c	/^void send_msg( unsigned int dst_id, enum dst_type dst_type, $/;"	f
+register_func	func.h	/^void register_func();$/;"	p	signature:()
+send_msg	msg.c	/^void send_msg( unsigned int dst_id, enum dst_type dst_type, $/;"	f	signature:( unsigned int dst_id, enum dst_type dst_type, enum func_type msg_type, unsigned int cnt, unsigned short size, char *content)
+send_msg	msg.h	/^void send_msg( unsigned int dst_id, enum dst_type dst_type, $/;"	p	signature:( unsigned int dst_id, enum dst_type dst_type, enum func_type msg_type, unsigned int cnt, unsigned short size, char *content)
 server_addr	client.c	/^struct sockaddr_in server_addr;$/;"	v	typeref:struct:sockaddr_in
 server_fd	client.c	/^int server_fd = 0;$/;"	v
-set_login_curs_pos	func.c	/^int set_login_curs_pos(enum LOGIN_CURS_POS curPos, int cnt_accont, int cnt_psw)$/;"	f
-set_main_curs_pos	func.c	/^int set_main_curs_pos(enum LOGIN_CURS_POS curPos)$/;"	f
-set_reg_curs_pos	func.c	/^int set_reg_curs_pos(enum REGISTER_CURS_POS curPos, int cnt_usr_name, int cnt_psw,int cnt_cf_psw,int cnt_gender,$/;"	f
-set_tips	show.c	/^void set_tips(char *str)$/;"	f
+set_login_curs_pos	func.c	/^int set_login_curs_pos(enum LOGIN_CURS_POS curPos, int cnt_accont, int cnt_psw)$/;"	f	signature:(enum LOGIN_CURS_POS curPos, int cnt_accont, int cnt_psw)
+set_login_curs_pos	func.h	/^int set_login_curs_pos(enum LOGIN_CURS_POS curPos, int cnt_accont, int cnt_psw);$/;"	p	signature:(enum LOGIN_CURS_POS curPos, int cnt_accont, int cnt_psw)
+set_main_curs_pos	func.c	/^void set_main_curs_pos(enum MAIN_CURS_POS curPos)$/;"	f	signature:(enum MAIN_CURS_POS curPos)
+set_main_curs_pos	func.h	/^void set_main_curs_pos(enum MAIN_CURS_POS curPos);$/;"	p	signature:(enum MAIN_CURS_POS curPos)
+set_reg_curs_pos	func.c	/^int set_reg_curs_pos(enum REGISTER_CURS_POS curPos, int cnt_usr_name, int cnt_psw,int cnt_cf_psw,int cnt_gender,$/;"	f	signature:(enum REGISTER_CURS_POS curPos, int cnt_usr_name, int cnt_psw,int cnt_cf_psw,int cnt_gender, int cnt_addr,int cnt_code , int cnt_usr_name_cn , int cnt_addr_cn)
+set_reg_curs_pos	func.h	/^int set_reg_curs_pos(enum REGISTER_CURS_POS curPos, int cnt_usr_name, int cnt_psw,int cnt_cf_psw,int cnt_gender,$/;"	p	signature:(enum REGISTER_CURS_POS curPos, int cnt_usr_name, int cnt_psw,int cnt_cf_psw,int cnt_gender, int cnt_addr,int cnt_code , int cnt_usr_name_cn , int cnt_addr_cn)
+set_tips	show.c	/^void set_tips(const char *str)$/;"	f	signature:(const char *str)
+set_tips	show.h	/^void set_tips(char *str);$/;"	p	signature:(char *str)
 tips	client.c	/^char tips[150];\/\/上个界面的提示消息$/;"	v
 tips_show	show.c	/^void tips_show()$/;"	f
+tips_show	show.h	/^void tips_show();$/;"	p	signature:()

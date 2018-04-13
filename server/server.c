@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
         int cfd = accept(lfd, (struct sockaddr *)(&client_addr), &addr_len);//后面2个参数用来保存连接者的地址，以及地址大小
         if( cfd == -1) {
             fprintf(stderr, "accept error : %s\n", strerror(errno));
-            exit(-1);
+            break;
         }
         pthread_create(&tid, NULL, usr_connect, &cfd);
         pthread_detach(tid); //设置线程为分离状态
@@ -100,7 +100,7 @@ void *usr_connect(void *arg)
         ret = recv_msg(&msg, sk); 
         if(ret == -1) {// 线程断开链接
             kk_addr[usr_num].usrId = 0;
-            return ;
+            return NULL;
         }
         switch(msg.msg_type) //第一次链接如果不是这三个类型则丢弃
         {

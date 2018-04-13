@@ -49,7 +49,7 @@ int recv_msg(struct node *msg,int sk)
     int sum = 0;
     int size= 0;
     int content_len = 0;
-    bzero(msg, sizeof(msg));
+    bzero(msg, sizeof(*msg));
     do { //接收前面的大小
         size = recv(sk, (char *)msg+sum, FS_LEN - sum, 0);
         if(size == 0 ) {

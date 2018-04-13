@@ -44,7 +44,7 @@ int my_ufd =0;
 int server_fd = 0;
 
 //这个函数是终端大小改变产生的信号捕捉处理函数
-void sig_winch(int signo);
+/*void sig_winch(int signo);*/
 //初始化全局变量
 void init_data();
 
@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
                 register_func();
                 break;
             case MAIN_WIN: //主界面
-                 draw_main();
+                draw_main();
                 main_func();
                 exit(0);
             case LOGOFF_WIN:
